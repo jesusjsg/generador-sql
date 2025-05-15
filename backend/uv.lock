@@ -30,19 +30,23 @@ version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
     { name = "fastapi", extra = ["standard"] },
+    { name = "libsql-experimental" },
     { name = "openpyxl" },
     { name = "pandas" },
     { name = "pydantic-settings" },
     { name = "sqlalchemy" },
+    { name = "sqlmodel" },
 ]
 
 [package.metadata]
 requires-dist = [
     { name = "fastapi", extras = ["standard"], specifier = ">=0.115.12" },
+    { name = "libsql-experimental", specifier = ">=0.0.51" },
     { name = "openpyxl", specifier = ">=3.1.5" },
     { name = "pandas", specifier = ">=2.2.3" },
     { name = "pydantic-settings", specifier = ">=2.9.1" },
     { name = "sqlalchemy", specifier = ">=2.0.40" },
+    { name = "sqlmodel", specifier = ">=0.0.24" },
 ]
 
 [[package]]
@@ -245,6 +249,17 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/df/bf/f7da0350254c0ed7c72f3e33cef02e048281fec7ecec5f032d4aac52226b/jinja2-3.1.6.tar.gz", hash = "sha256:0137fb05990d35f1275a587e9aee6d56da821fc83491a0fb838183be43f66d6d", size = 245115, upload-time = "2025-03-05T20:05:02.478Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/62/a1/3d680cbfd5f4b8f15abc1d571870c5fc3e594bb582bc3b64ea099db13e56/jinja2-3.1.6-py3-none-any.whl", hash = "sha256:85ece4451f492d0c13c5dd7c13a64681a86afae63a5f347908daf103ce6d2f67", size = 134899, upload-time = "2025-03-05T20:05:00.369Z" },
+]
+
+[[package]]
+name = "libsql-experimental"
+version = "0.0.51"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/30/cc/983337ab20fc788c368cadc72c4b0c26bca244c4bf7bdc94b0f9ea0ec27a/libsql_experimental-0.0.51.tar.gz", hash = "sha256:ec31dc9c87753de0e434fd3e6ef61393bcf2707627c227497630f20712941a82", size = 31929, upload-time = "2025-05-14T14:39:04.531Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/66/de/c8bc3dcfc353f89c6ab1fc505a0c63bc3077a0920a7fb151aaab86f62c33/libsql_experimental-0.0.51-cp313-cp313-macosx_10_12_x86_64.whl", hash = "sha256:11cbbf41907a34b12fa6344099f9c1f7d58aabc285e0244355d6ba7a46f43ce1", size = 4843116, upload-time = "2025-05-14T14:38:54.388Z" },
+    { url = "https://files.pythonhosted.org/packages/c2/1c/fc571db6157796e7365b265ae28a96660230f38aaea0f9888494c59f4ea1/libsql_experimental-0.0.51-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:0b106b4bf15a91973d997cb657f7f1b05bd9efcb4f79d51496bd56a693fe8cb3", size = 4614354, upload-time = "2025-05-14T14:38:55.677Z" },
+    { url = "https://files.pythonhosted.org/packages/0d/50/2bbec1bdfe00e170ea9b68d53ba3485beb4635f7bac58870ef93399e6996/libsql_experimental-0.0.51-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:6685ffa8feb85aa365cd7b4bcf9313cb6da976003fa9bf6b3546ec13030291a4", size = 5225946, upload-time = "2025-05-14T14:38:57.224Z" },
 ]
 
 [[package]]
@@ -558,6 +573,19 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/33/ac/e5e0a807163652a35be878c0ad5cfd8b1d29605edcadfb5df3c512cdf9f3/sqlalchemy-2.0.40-cp313-cp313-win32.whl", hash = "sha256:a669cbe5be3c63f75bcbee0b266779706f1a54bcb1000f302685b87d1b8c1500", size = 2080704, upload-time = "2025-03-27T18:46:00.193Z" },
     { url = "https://files.pythonhosted.org/packages/1c/cb/f38c61f7f2fd4d10494c1c135ff6a6ddb63508d0b47bccccd93670637309/sqlalchemy-2.0.40-cp313-cp313-win_amd64.whl", hash = "sha256:641ee2e0834812d657862f3a7de95e0048bdcb6c55496f39c6fa3d435f6ac6ad", size = 2104564, upload-time = "2025-03-27T18:46:01.442Z" },
     { url = "https://files.pythonhosted.org/packages/d1/7c/5fc8e802e7506fe8b55a03a2e1dab156eae205c91bee46305755e086d2e2/sqlalchemy-2.0.40-py3-none-any.whl", hash = "sha256:32587e2e1e359276957e6fe5dad089758bc042a971a8a09ae8ecf7a8fe23d07a", size = 1903894, upload-time = "2025-03-27T18:40:43.796Z" },
+]
+
+[[package]]
+name = "sqlmodel"
+version = "0.0.24"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "pydantic" },
+    { name = "sqlalchemy" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/86/4b/c2ad0496f5bdc6073d9b4cef52be9c04f2b37a5773441cc6600b1857648b/sqlmodel-0.0.24.tar.gz", hash = "sha256:cc5c7613c1a5533c9c7867e1aab2fd489a76c9e8a061984da11b4e613c182423", size = 116780, upload-time = "2025-03-07T05:43:32.887Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/16/91/484cd2d05569892b7fef7f5ceab3bc89fb0f8a8c0cde1030d383dbc5449c/sqlmodel-0.0.24-py3-none-any.whl", hash = "sha256:6778852f09370908985b667d6a3ab92910d0d5ec88adcaf23dbc242715ff7193", size = 28622, upload-time = "2025-03-07T05:43:30.37Z" },
 ]
 
 [[package]]

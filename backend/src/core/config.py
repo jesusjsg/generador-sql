@@ -1,6 +1,7 @@
 from typing import Any
+from pydantic_core import MultiHostUrl
 from pydantic_settings import BaseSettings, SettingsConfigDict
-from pydantic import SecretStr
+from pydantic import PostgresDsn, SecretStr
 
 
 def parse_cors(v: Any) -> list[str] | str:
@@ -18,12 +19,27 @@ class Settings(BaseSettings):
         env_prefix="APP_",
         env_file_encoding="utf-8",
         case_sensitive=True,
+        extra="ignore",
     )
-    API_NAME: str
+    PROJECT_NAME: str
     DATABASE_AUTH_TOKEN: SecretStr
     DATABASE_URL: str
     DEBUG: bool
-    # Agregar los cors en produccion
+    POSTGRES_USER: str
+    POSTGRES_PASSWORD: str
+    POSTGRES_SERVER: str
+    POSTGRES_DB: str
+    POSTGRES_PORT: int
+
+    def SQLALCHEMY_DATABASE_URI(self) -> PostgresDsn:
+        return MultiHostUrl.build(
+            scheme="postgresql+asyncpg",
+            username=self.POSTGRES_USER,
+            password=self.POSTGRES_PASSWORD,
+            host=self.POSTGRES_SERVER,
+            port=self.POSTGRES_PORT,
+            path=self.POSTGRES_DB,
+        )
 
 
 settings = Settings()
